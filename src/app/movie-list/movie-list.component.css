@@ -1,7 +1,5 @@
 .movie-list {
     padding: 20px;
-    background-color: #ddd;
-    height: 100vh;
   }
   .movie-list p{
     display: inline-block;
