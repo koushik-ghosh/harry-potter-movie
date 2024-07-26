@@ -1,0 +1,26 @@
+<div class="movie-list">
+    <div class="filter-cotaier" >
+        <h3>Filters</h3>
+        <div class="filter-item"><label for="title">Title</label>
+            <input id="title" [(ngModel)]="titleFilter">
+        </div>
+        <div class="filter-item">
+            <label for="releaseYear">Release year</label>
+            <input id="releaseYear" [(ngModel)]="yearFilter" type="number">
+        </div>
+        
+    </div>
+    <div *ngFor="let movie of filteredMovies()" class="movie-item">
+        <div class="movie-details">
+            <h2>{{ movie.title }}</h2>
+            <p><strong>Release Date:</strong> {{ movie.release_date | date : "yyyy-MM-dd"}}</p>       
+            <p><strong>Budget: </strong>${{ movie.budget }} million </p>
+            <p><strong>Duration:</strong> {{  formatDuration(movie.duration) }}</p>        
+        </div>
+        
+        <button [id]="movie.id" (click)="viewDetails(movie.id)">Details</button>
+
+      </div>
+  </div>
+  
+
